@@ -54,6 +54,7 @@ public class Shapes_CanvasManager : MonoBehaviour {
 			// Compute score
 			scoreCanvas.SetActive (true);
 			scoreText.text = score.ToString ();
+
 		}
 
 		else {
