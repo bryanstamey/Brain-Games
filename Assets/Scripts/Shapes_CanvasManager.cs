@@ -11,12 +11,16 @@ public class Shapes_CanvasManager : MonoBehaviour {
 	public bool[] haveSeen;
 	private int score = 0;
 	public Text scoreText;
-	private float timeLeft = 30.0f; // Set to game time in seconds
+	private float timeLeft = 15.0f; // Set to game time in seconds
 	public Text timeDisp;
 	private bool gameOver = false;
+	public GameObject home;
+
+	public ItemManager ItemManager;
 
 	void Start() {
 		scoreCanvas.SetActive (false);
+		home.SetActive (false);
 		//scoreText = GetComponent<Text> ();
 		switchCanvas ();
 	}
@@ -40,6 +44,8 @@ public class Shapes_CanvasManager : MonoBehaviour {
 				canvas [i].SetActive (false);
 			scoreCanvas.SetActive (true);
 			scoreText.text = score.ToString ();
+			home.SetActive (true);
+			ItemManager.neurobucks += score;
 		}
 	}
 		
@@ -52,8 +58,11 @@ public class Shapes_CanvasManager : MonoBehaviour {
 			for(int i = 0; i < canvas.Length; i++)
 				canvas [i].SetActive (false);
 			// Compute score
+			home.SetActive (true);
 			scoreCanvas.SetActive (true);
 			scoreText.text = score.ToString ();
+			ItemManager.neurobucks += score;
+
 
 		}
 
