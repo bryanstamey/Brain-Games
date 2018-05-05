@@ -16,12 +16,16 @@ public class Matching : MonoBehaviour {
 	public GameObject scoreCanvas;
 	private int score = 0;
 	public Text scoreText;
-	private float timeLeft = 10.0f; // Game time in seconds
+	private float timeLeft = 15.0f; // Game time in seconds
 	public Text timeDisp;
 	private bool gameOver = false;	// All matches found or time up
 	System.Random rnd = new System.Random();
 
 	private List<int> clickedIdx = new List<int>();
+
+	public GameObject home;
+
+	public ItemManager ItemManager;
 
 
 	void Start() {
@@ -29,6 +33,7 @@ public class Matching : MonoBehaviour {
 
 		scoreCanvas.SetActive (false);
 		matchText.SetActive (false);
+		home.SetActive (false);
 
 		// Add button event listeners
 		for (int i = 0; i < cardBack.Length; i++) {
@@ -83,6 +88,8 @@ public class Matching : MonoBehaviour {
 			Debug.Log ("Score is " + score);
 			scoreCanvas.SetActive (true);
 			scoreText.text = score.ToString ();
+			home.SetActive (true);
+			ItemManager.neurobucks += score;
 		}
 	}
 

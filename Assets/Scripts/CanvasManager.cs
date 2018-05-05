@@ -41,6 +41,7 @@ public class CanvasManager : MonoBehaviour {
 		} else if (instance != this) {
 			Destroy (gameObject);
 		}
+		Start ();
 	}
 
 
