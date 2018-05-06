@@ -4614,7 +4614,8 @@ MonoBehaviour:
   itemUIPrefab: {fileID: 1475044344372364, guid: f09dab5acc7f470408e069cffca4e49e,
     type: 2}
   isDecorate: 1
-  neurobucks: 9000
+  neurobucks: 1000
+  neuroBucks_Text: {fileID: 668049508}
 --- !u!4 &1661977507
 Transform:
   m_ObjectHideFlags: 0

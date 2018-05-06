@@ -39,7 +39,7 @@ public class CanvasManager : MonoBehaviour {
 			instance = this;
 			DontDestroyOnLoad (this.gameObject);
 		} else if (instance != this) {
-			Destroy (gameObject);
+			//Destroy (gameObject);
 		}
 		Start ();
 	}

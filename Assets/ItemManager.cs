@@ -62,7 +62,8 @@ public class ItemManager : MonoBehaviour {
 	public bool isDecorate = true;
 
 
-	public int neurobucks = 9000;
+	public int neurobucks = 100;
+	public Text neuroBucks_Text;
 	// Use this for initialization
 
 	void Awake()
@@ -71,7 +72,7 @@ public class ItemManager : MonoBehaviour {
 			instance = this;
 			DontDestroyOnLoad (this.gameObject);
 		} else if (instance != this) {
-			Destroy (gameObject);
+			//Destroy (gameObject);
 		}
 	}
 	void Start () {
@@ -107,7 +108,7 @@ public class ItemManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		neuroBucks_Text.text = neurobucks.ToString ();
 	}
 
 	public void displayShopItems(char space)
